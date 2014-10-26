@@ -12,3 +12,8 @@
 
 - name: install postfix
   apt: pkg=postfix state=installed update_cache=yes cache_valid_time=86400
+
+# https://wiki.debian.org/PostfixAndSASL
+- name: install libsasl2 packages needed for sasl-protected relaying
+  apt: pkg=libsasl2-modules state=installed update_cache=yes cache_valid_time=86400
+  apt: pkg=sasl2-bin state=installed update_cache=yes cache_valid_time=86400
